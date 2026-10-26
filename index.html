@@ -63,7 +63,7 @@ body {
 
 .canvas-scroll { overflow: auto; flex: 1 1 auto; min-height: 0; }
 .canvas-scale { transform-origin: 0 0; transition: transform .2s ease; }
-.canvas-wrapper { padding: 40px 40px 80px 72px; position: relative; width: 1340px; }
+.canvas-wrapper { padding: 40px 40px 80px 72px; position: relative; width: 1640px; }
 .zone-label { position: absolute; font-size: 13px; font-weight: 700; color: var(--gray-700); display: flex; align-items: center; gap: 10px; }
 .zone-label span { font-size: 11px; font-weight: 500; color: var(--gray-500); }
 .zone-rule { position: absolute; height: 1px; background: var(--gray-300); }
@@ -147,7 +147,7 @@ footer svg { opacity: .5; }
     </div>
   </div>
   <div class="header-right">
-    <span class="header-badge">全18ページ（公開10・管理画面8）</span>
+    <span class="header-badge">全22ページ（サイト12・管理画面10）</span>
     <span>作成日: 2026.10.26</span>
     <span>Ver 1.1</span>
     <div class="zoom-controls">
@@ -312,10 +312,10 @@ footer svg { opacity: .5; }
     </div>
   </div>
 
-  <div class="zone-rule" style="left:0; top:800px; width:1380px;"></div>
+  <div class="zone-rule" style="left:0; top:800px; width:1680px;"></div>
   <div class="zone-label" style="left:32px; top:816px;">管理画面<span>宮本工業所様が更新できる範囲（ログインが必要）</span></div>
 
-  <div class="page-card" id="admin-login" tabindex="0" style="left:532px; top:860px; width:160px;">
+  <div class="page-card" id="admin-login" tabindex="0" style="left:732px; top:860px; width:160px;">
     <div class="card-color-bar color-admin"></div>
     <div class="card-label"><span class="badge b-admin">管理</span><div class="meta"><div class="name">ログイン</div><div class="url">/admin/login.php</div><span class="st new">新規</span></div></div>
     <div class="mini-wire">
@@ -323,7 +323,7 @@ footer svg { opacity: .5; }
       <div class="mw-section-title">LOGIN</div><div class="mw-form-field"></div><div class="mw-form-field"></div><div class="mw-btn" style="width:40%"></div>
     </div>
   </div>
-  <div class="page-card" id="admin" tabindex="0" style="left:522px; top:1080px; width:180px;">
+  <div class="page-card" id="admin" tabindex="0" style="left:722px; top:1080px; width:180px;">
     <div class="card-color-bar color-admin"></div>
     <div class="card-label"><span class="badge b-admin">管理</span><div class="meta"><div class="name">管理画面トップ</div><div class="url">/admin/</div><span class="st new">新規</span></div></div>
     <div class="mini-wire">
@@ -379,6 +379,36 @@ footer svg { opacity: .5; }
       <div class="mw-section-title">パスワード・権限</div><div class="mw-form-field"></div><div class="mw-form-field"></div><div class="mw-btn" style="width:40%"></div>
     </div>
   </div>
+  <div class="page-card" id="admin-seo" tabindex="0" style="left:1232px; top:1320px; width:160px;">
+    <div class="card-color-bar color-admin"></div>
+    <div class="card-label"><span class="badge b-admin">管理</span><div class="meta"><div class="name">SEO管理</div><div class="url">/admin/?tab=seo</div><span class="st new">新規</span></div></div>
+    <div class="mini-wire">
+      <div class="mw-admin-bar"><i></i><i></i><i></i><i></i></div>
+      <div class="mw-section-title">ページ別タイトル・説明文</div><div class="mw-table-row"><div class="mw-table-cell header"></div><div class="mw-table-cell"></div><div class="mw-table-cell"></div></div><div class="mw-table-row"><div class="mw-table-cell header"></div><div class="mw-table-cell"></div><div class="mw-table-cell"></div></div><div class="mw-table-row"><div class="mw-table-cell header"></div><div class="mw-table-cell"></div><div class="mw-table-cell"></div></div><div class="mw-hl-box"><div class="mw-hl-label">sitemap.xml 自動生成</div></div>
+    </div>
+  </div>
+  <div class="page-card" id="admin-publish" tabindex="0" style="left:1432px; top:1320px; width:160px;">
+    <div class="card-color-bar color-admin"></div>
+    <div class="card-label"><span class="badge b-admin">管理</span><div class="meta"><div class="name">公開管理</div><div class="url">/admin/?tab=publish</div><span class="st new">新規</span></div></div>
+    <div class="mini-wire">
+      <div class="mw-admin-bar"><i></i><i></i><i></i><i></i></div>
+      <div class="mw-section-title">サイトの状態</div><div class="mw-chips"><div class="mw-chip" style="border-color:var(--primary)"></div><div class="mw-chip"></div><div class="mw-chip"></div></div><div class="mw-hl-box"><div class="mw-hl-label">公開中／メンテナンス／Coming Soon</div></div><div class="mw-section-title">検索除け</div><div class="mw-form-field"></div>
+    </div>
+  </div>
+  <div class="page-card" id="maintenance" tabindex="0" style="left:1242px; top:600px; width:140px;">
+    <div class="card-color-bar color-gray"></div>
+    <div class="card-label"><span class="badge b-gray">共通</span><div class="meta"><div class="name">メンテナンス中</div><div class="url">公開管理で切替</div><span class="st new">新規</span></div></div>
+    <div class="mini-wire" style="min-height:70px">
+      <div class="mw-section-title">MAINTENANCE</div><div class="mw-text-line short" style="margin:0 auto 2px"></div><div class="mw-tel"></div>
+    </div>
+  </div>
+  <div class="page-card" id="comingsoon" tabindex="0" style="left:1442px; top:600px; width:140px;">
+    <div class="card-color-bar color-gray"></div>
+    <div class="card-label"><span class="badge b-gray">共通</span><div class="meta"><div class="name">Coming Soon</div><div class="url">公開前に表示</div><span class="st new">新規</span></div></div>
+    <div class="mini-wire" style="min-height:70px">
+      <div class="mw-section-title">COMING SOON</div><div class="mw-text-line short" style="margin:0 auto 2px"></div><div class="mw-tel"></div>
+    </div>
+  </div>
 
 </div>
 </div>
@@ -422,7 +452,7 @@ const tree = {
   'top': ['information', 'guide', 'pet', 'facility', 'partner', 'contact'],
   'information': ['information-detail'],
   'admin-login': ['admin'],
-  'admin': ['admin-edit', 'admin-news', 'admin-shop', 'admin-docs', 'admin-settings', 'admin-account'],
+  'admin': ['admin-edit', 'admin-news', 'admin-shop', 'admin-docs', 'admin-settings', 'admin-account', 'admin-seo', 'admin-publish'],
 };
 const NS = 'http://www.w3.org/2000/svg';
 const LINE_COLOR = '#94a3b8', LINE_WIDTH = 1.5, DASH = '6,4', DOT_R = 3.5;
@@ -484,6 +514,10 @@ const cardLinkMap = {
   'admin-docs': 'wf-admin-docs.html',
   'admin-settings': 'wf-admin-settings.html',
   'admin-account': 'wf-admin-account.html',
+  'admin-seo': 'wf-admin-seo.html',
+  'admin-publish': 'wf-admin-publish.html',
+  'maintenance': 'wf-maintenance.html',
+  'comingsoon': 'wf-comingsoon.html',
 };
 document.querySelectorAll('.page-card').forEach(card => {
   const href = cardLinkMap[card.id];
