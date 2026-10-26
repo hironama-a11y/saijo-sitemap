@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WIREFRAME - 施設・アクセス</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap">
+<style>
+:root{--primary:#4361ee;--dark:#0f172a;--gray-700:#334155;--gray-500:#64748b;--gray-400:#94a3b8;--gray-300:#cbd5e1;--gray-200:#e2e8f0;--gray-100:#f1f5f9;--gray-50:#f8fafc;--white:#fff;--new:#2563eb;--mod:#c2410c}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Noto Sans JP','Inter',sans-serif;background:#edf0f7;color:#1e293b;display:flex;flex-direction:column;min-height:100vh;color-scheme:light}
+.header{background:var(--dark);padding:20px 32px;display:flex;align-items:center;gap:24px;flex-wrap:wrap}
+.header-left{display:flex;flex-direction:column;gap:8px}
+.header h1{font-size:15px;font-weight:700;color:#fff;letter-spacing:.08em}
+.header-company{display:flex;align-items:center;gap:8px}
+.company-name{font-size:11px;color:var(--gray-400)}
+.header-badge{background:rgba(255,255,255,.08);padding:4px 12px;border-radius:20px;font-size:11px;color:var(--gray-300);border:1px solid rgba(255,255,255,.12)}
+.header-meta{font-size:11px;color:var(--gray-400)}
+.header-back{display:inline-flex;align-items:center;gap:6px;color:#cbd5e1;text-decoration:none;font-size:12px;font-weight:500;padding:6px 14px;border-radius:6px;border:1px solid rgba(255,255,255,.2);background:rgba(255,255,255,.06);white-space:nowrap;margin-left:auto}
+.header-back:hover,.header-back:focus-visible{color:#fff;background:rgba(255,255,255,.14)}
+.header-back svg{width:14px;height:14px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.info-bar{background:var(--white);border-bottom:1px solid var(--gray-200);padding:10px 32px;display:flex;gap:8px 24px;align-items:center;font-size:12px;color:var(--gray-500);flex-wrap:wrap}
+.info-bar strong{color:var(--gray-700);font-weight:600}
+.back-link{color:var(--primary);text-decoration:none;font-weight:500}
+.back-link:hover{text-decoration:underline}
+.status{font-size:11px;font-weight:700;color:#fff;padding:2px 10px;border-radius:4px;background:var(--gray-400)}
+.status.new{background:var(--new)}.status.mod{background:var(--mod)}
+main{flex:1 0 auto;padding:32px 32px 32px 60px;display:flex;flex-wrap:wrap;align-items:flex-start;gap:32px}
+.wf-container{background:var(--white);border-radius:12px;padding:24px;width:480px;max-width:100%;flex-shrink:0}
+.wf-section{padding:10px 0;border-bottom:1px dashed var(--gray-200)}
+.wf-section:last-child{border-bottom:none}
+.wf-bar{border-radius:3px}.wf-bar.dark{background:#334155}.wf-bar.accent{background:var(--primary)}
+.wf-heading{font-size:11px;font-weight:600;color:var(--gray-500);letter-spacing:.04em;display:flex;align-items:center;gap:6px}
+.sec-flag{font-size:9px;font-weight:700;color:#fff;padding:1px 6px;border-radius:3px}
+.sec-flag.new{background:var(--new)}.sec-flag.mod{background:var(--mod)}
+.wf-line{height:4px;background:#d1d5db;border-radius:2px}
+.w90{width:90%}.w85{width:85%}.w80{width:80%}.w70{width:70%}.w65{width:65%}.w60{width:60%}.w50{width:50%}
+.mt4{margin-top:4px}.mt8{margin-top:8px}
+.wf-block{border-radius:4px}
+.wf-btn{height:14px;border-radius:3px}
+.wf-input{height:20px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:4px}
+.wf-card{flex:1;background:#f8fafc;border:1px solid #e5e7eb;border-radius:4px;padding:6px;min-width:0}
+.wf-table{width:100%;border-collapse:collapse}
+.wf-table td{border:1px solid #e5e7eb;height:18px;background:#f8fafc}
+.wf-table td:first-child{width:30%;background:#f1f5f9}
+.info-sections{background:var(--white);border-radius:12px;padding:24px;width:360px;max-width:100%;flex-shrink:0}
+.info-title{font-size:13px;font-weight:700;color:var(--gray-700);margin-bottom:12px;padding-bottom:8px;border-bottom:2px solid var(--primary)}
+.info-role-text{font-size:12px;color:#475569;line-height:1.8;margin-bottom:20px}
+.info-row{display:flex;gap:10px;padding:10px 0;border-bottom:1px solid #f1f5f9}
+.info-row:last-child{border-bottom:none}
+.info-num{width:20px;height:20px;background:var(--primary);color:#fff;border-radius:50%;font-size:10px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.info-name{font-size:12px;font-weight:600;color:var(--gray-700);display:flex;align-items:center;gap:6px}
+.info-desc{font-size:11px;color:var(--gray-500);margin-top:2px;line-height:1.6}
+.footer{background:var(--white);padding:16px 32px;border-top:2px solid var(--gray-200);display:flex;align-items:center;gap:24px;font-size:11px;color:var(--gray-400);flex-wrap:wrap}
+.footer-logo{opacity:.5}
+.footer-right{margin-left:auto}
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-left"><h1>WIREFRAME</h1><div class="header-company"><svg class="company-logo" viewBox="0 0 94 56.17" width="56" height="33" aria-hidden="true"><defs><style>.lw3{fill:#fff}.lw4{fill:#00afec}</style></defs><g><path class="lw3" d="M32.57,15.88s0,0,0,.01c3.18,6,.9,13.45-5.11,16.63-4.35,2.31-9.46,1.73-13.15-1.05l2.13-2.62L35.73,5.16C27.21-2.09,14.41-1.7,6.36,6.35c-8.47,8.47-8.48,22.2-.01,30.68,8.47,8.48,22.2,8.48,30.68.02,2.73-2.73,5.3-7.6,6.12-11.35,0,0,1.26-6.98,4.02-13.01,2.76-6.03,7.98-10.35,7.98-10.35,0,0-16.7,1.49-22.58,13.55Z"/><path class="lw4" d="M15.94,10.79c-6,3.18-8.28,10.63-5.1,16.63.87,1.65,2.08,3.01,3.48,4.06l15.51-19.05c-3.73-3.28-9.23-4.1-13.88-1.64Z"/><path class="lw3" d="M55.44,35.32c.47.59.98,1.16,1.53,1.7,8.47,8.47,22.2,8.48,30.68.01,8.48-8.47,8.48-22.2.01-30.68-8.47-8.48-22.2-8.48-30.68-.01-2.73,2.73-5.3,7.59-6.12,11.35,0,0-1.26,6.98-4.02,13.01-2.76,6.03-7.98,10.35-7.98,10.35,0,0,9.04-.44,16.58-5.74Z"/><path class="lw4" d="M66.53,10.86c6-3.18,13.44-.9,16.63,5.11,3.18,6,.9,13.45-5.1,16.63-6,3.18-13.45.89-16.63-5.11-3.18-6-.9-13.45,5.11-16.63Z"/></g></svg><span class="company-name">斎場 公式サイト（宮本工業所様）</span></div></div>
+  <span class="header-badge">施設・アクセス</span>
+  <span class="header-meta">作成日: 2026.10.26</span>
+  <span class="header-meta">Ver 1.1</span>
+  <a href="index.html" class="header-back"><svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="15 18 9 12 15 6"/></svg>サイトマップに戻る</a>
+</div>
+<div class="info-bar">
+  <a href="index.html" class="back-link">← サイトマップに戻る</a>
+  <span><strong>ページ名:</strong> 施設・アクセス</span>
+  <span><strong>URL:</strong> /facility/</span>
+  <span><strong>テンプレート:</strong> FACILITY</span>
+  <span class="status mod">既存ページを改修</span>
+</div>
+<main>
+  <div class="wf-container">
+<div class="wf-section"><div class="wf-bar dark" style="height:50px;display:flex;align-items:center;padding:0 12px;margin-top:0px"><div style="width:40px;height:12px;background:#94a3b8;border-radius:2px"></div><div style="display:flex;gap:4px;margin-left:auto"><div style="width:20px;height:4px;background:#64748b;border-radius:1px"></div><div style="width:20px;height:4px;background:#64748b;border-radius:1px"></div><div style="width:20px;height:4px;background:#64748b;border-radius:1px"></div><div style="width:20px;height:4px;background:#64748b;border-radius:1px"></div><div style="width:20px;height:4px;background:#64748b;border-radius:1px"></div><div style="width:20px;height:4px;background:#64748b;border-radius:1px"></div></div></div></div>
+<div class="wf-section"><div style="display:flex;gap:4px;margin-bottom:6px;align-items:center"><div style="width:24px;height:3px;background:#94a3b8;border-radius:1px"></div><span style="font-size:6px;color:#94a3b8">&gt;</span><div style="width:30px;height:3px;background:#94a3b8;border-radius:1px"></div></div><div class="wf-bar accent" style="height:10px;width:50%;margin-bottom:6px"></div><div class="wf-line w90 mt4"></div><div class="wf-line w70 mt4"></div></div>
+<div class="wf-section"><div class="wf-heading">ページ内目次</div><div style="display:flex;gap:4px;margin-top:6px;flex-wrap:wrap"><div style="width:44px;height:14px;background:var(--primary);border-radius:12px"></div><div style="width:44px;height:14px;background:#f1f5f9;border-radius:12px;border:1px solid #e2e8f0"></div><div style="width:44px;height:14px;background:#f1f5f9;border-radius:12px;border:1px solid #e2e8f0"></div><div style="width:44px;height:14px;background:#f1f5f9;border-radius:12px;border:1px solid #e2e8f0"></div><div style="width:44px;height:14px;background:#f1f5f9;border-radius:12px;border:1px solid #e2e8f0"></div></div></div>
+<div class="wf-section"><div class="wf-heading">館内案内図</div><div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:8px"><div class="wf-block" style="height:50px;background:#e5e7eb"></div><div class="wf-block" style="height:50px;background:#e5e7eb"></div></div></div>
+<div class="wf-section"><div class="wf-heading">主な施設</div><div style="display:flex;gap:8px;margin-top:8px"><div class="wf-card"><div class="wf-bar accent" style="height:6px;width:60%;margin-bottom:6px"></div><div class="wf-line w90"></div><div class="wf-line w80 mt4"></div><div class="wf-line w70 mt4"></div></div><div class="wf-card"><div class="wf-bar accent" style="height:6px;width:60%;margin-bottom:6px"></div><div class="wf-line w90"></div><div class="wf-line w80 mt4"></div><div class="wf-line w70 mt4"></div></div></div></div>
+<div class="wf-section"><div class="wf-heading">売店（#shop）<span class="sec-flag new">追加</span></div><div style="display:flex;gap:8px;margin-top:6px"><div class="wf-block" style="width:110px;height:70px;background:#e5e7eb;flex-shrink:0"></div><table class="wf-table"><tr><td></td><td></td></tr><tr><td></td><td></td></tr><tr><td></td><td></td></tr></table></div></div>
+<div class="wf-section"><div class="wf-heading">売店の商品<span class="sec-flag new">追加</span></div><div style="display:flex;gap:6px;margin-top:8px"><div class="wf-card"><div class="wf-block" style="height:44px;background:#e5e7eb"></div><div class="wf-line w80 mt4"></div><div style="width:50%;height:6px;background:#334155;border-radius:1px;margin-top:4px"></div></div><div class="wf-card"><div class="wf-block" style="height:44px;background:#e5e7eb"></div><div class="wf-line w80 mt4"></div><div style="width:50%;height:6px;background:#334155;border-radius:1px;margin-top:4px"></div></div><div class="wf-card"><div class="wf-block" style="height:44px;background:#e5e7eb"></div><div class="wf-line w80 mt4"></div><div style="width:50%;height:6px;background:#334155;border-radius:1px;margin-top:4px"></div></div><div class="wf-card"><div class="wf-block" style="height:44px;background:#e5e7eb"></div><div class="wf-line w80 mt4"></div><div style="width:50%;height:6px;background:#334155;border-radius:1px;margin-top:4px"></div></div></div></div>
+<div class="wf-section"><div class="wf-heading">ペット用骨壺・棺<span class="sec-flag new">追加</span></div><div style="margin-top:6px"><div style="display:flex;align-items:center;gap:6px;padding:5px 0;border-bottom:1px solid #f1f5f9"><div style="width:6px;height:6px;border:1px solid var(--primary);border-radius:1px"></div><div class="wf-line w80"></div></div><div style="display:flex;align-items:center;gap:6px;padding:5px 0;border-bottom:1px solid #f1f5f9"><div style="width:6px;height:6px;border:1px solid var(--primary);border-radius:1px"></div><div class="wf-line w70"></div></div></div></div>
+<div class="wf-section"><div style="background:#fffbeb;border:1px solid #fde68a;border-radius:4px;padding:8px"><div class="wf-heading" style="color:#b45309">事前申込サービス<span class="sec-flag new">追加</span></div><div class="wf-line w90 mt4"></div><div class="wf-line w80 mt4"></div><div class="wf-line w70 mt4"></div></div></div>
+<div class="wf-section"><div class="wf-heading">駐車場・アクセス</div><div class="wf-block" style="height:100px;background:#e5e7eb;margin-top:6px;display:flex;align-items:center;justify-content:center"><span style="font-size:8px;color:#64748b">Google Maps</span></div><div class="wf-line w70 mt8"></div><div class="wf-line w50 mt4"></div></div>
+<div class="wf-section"><div class="wf-bar dark" style="height:60px;display:flex;padding:8px 12px;gap:8px;flex-direction:column"><div style="display:flex;gap:12px"><div style="width:30px;height:4px;background:#64748b;border-radius:1px"></div><div style="width:30px;height:4px;background:#64748b;border-radius:1px"></div><div style="width:30px;height:4px;background:#64748b;border-radius:1px"></div></div><div style="width:50%;height:3px;background:#475569;border-radius:1px"></div><div style="width:70%;height:3px;background:#475569;border-radius:1px"></div></div></div>
+  </div>
+  <div class="info-sections">
+    <div class="info-title">ページ役割</div>
+    <div class="info-role-text">館内の施設と交通アクセスを案内するページ。人の火葬で来場される方向けの売店情報（飲み物・軽食・会葬者用品・骨つぼ・事前申込サービス）を追加する。ペット用商品はペット火葬ページに掲載し、相互にリンクする。</div>
+    <div class="info-title">セクション構成</div>
+<div class="info-row"><span class="info-num">1</span><div><div class="info-name">ヘッダー</div><div class="info-desc">ロゴ、グローバルナビ</div></div></div>
+<div class="info-row"><span class="info-num">2</span><div><div class="info-name">ページヘッダー</div><div class="info-desc">パンくず、ページタイトル</div></div></div>
+<div class="info-row"><span class="info-num">3</span><div><div class="info-name">ページ内目次</div><div class="info-desc">館内案内図／主な施設／売店／駐車場／アクセス</div></div></div>
+<div class="info-row"><span class="info-num">4</span><div><div class="info-name">館内案内図</div><div class="info-desc">フロアマップ画像</div></div></div>
+<div class="info-row"><span class="info-num">5</span><div><div class="info-name">主な施設</div><div class="info-desc">火葬炉・告別収骨室・待合室などの写真と説明</div></div></div>
+<div class="info-row"><span class="info-num">6</span><div><div class="info-name">売店（#shop）<span class="sec-flag new">追加</span></div><div class="info-desc">売店の利用時間、休業日、売店の電話番号</div></div></div>
+<div class="info-row"><span class="info-num">7</span><div><div class="info-name">売店の商品<span class="sec-flag new">追加</span></div><div class="info-desc">飲み物・軽食／会葬者用品・仏具／骨つぼ のカテゴリ別に写真・商品名・価格</div></div></div>
+<div class="info-row"><span class="info-num">8</span><div><div class="info-name">ペット用骨壺・棺<span class="sec-flag new">追加</span></div><div class="info-desc">ペット火葬のご利用案内（売店セクション）へのリンク</div></div></div>
+<div class="info-row"><span class="info-num">9</span><div><div class="info-name">事前申込サービス<span class="sec-flag new">追加</span></div><div class="info-desc">仕出し料理・貸布団・着付けの取り次ぎ。事前申込が必要な旨と売店電話</div></div></div>
+<div class="info-row"><span class="info-num">10</span><div><div class="info-name">駐車場・アクセス</div><div class="info-desc">駐車場マップ（PDF）、地図、所在地、電車・車でのアクセス</div></div></div>
+<div class="info-row"><span class="info-num">11</span><div><div class="info-name">フッター</div><div class="info-desc">所在地・電話・FAX、著作権表示</div></div></div>
+  </div>
+</main>
+<div class="footer">
+  <span>Confidential - e-NAQUEST株式会社</span>
+  <svg class="footer-logo" viewBox="0 0 94 56.17" width="40" height="24" aria-hidden="true"><defs><style>.fl3{fill:#231815}.fl4{fill:#00afec}</style></defs><g><path class="fl3" d="M32.57,15.88s0,0,0,.01c3.18,6,.9,13.45-5.11,16.63-4.35,2.31-9.46,1.73-13.15-1.05l2.13-2.62L35.73,5.16C27.21-2.09,14.41-1.7,6.36,6.35c-8.47,8.47-8.48,22.2-.01,30.68,8.47,8.48,22.2,8.48,30.68.02,2.73-2.73,5.3-7.6,6.12-11.35,0,0,1.26-6.98,4.02-13.01,2.76-6.03,7.98-10.35,7.98-10.35,0,0-16.7,1.49-22.58,13.55Z"/><path class="fl4" d="M15.94,10.79c-6,3.18-8.28,10.63-5.1,16.63.87,1.65,2.08,3.01,3.48,4.06l15.51-19.05c-3.73-3.28-9.23-4.1-13.88-1.64Z"/><path class="fl3" d="M55.44,35.32c.47.59.98,1.16,1.53,1.7,8.47,8.47,22.2,8.48,30.68.01,8.48-8.47,8.48-22.2.01-30.68-8.47-8.48-22.2-8.48-30.68-.01-2.73,2.73-5.3,7.59-6.12,11.35,0,0-1.26,6.98-4.02,13.01-2.76,6.03-7.98,10.35-7.98,10.35,0,0,9.04-.44,16.58-5.74Z"/><path class="fl4" d="M66.53,10.86c6-3.18,13.44-.9,16.63,5.11,3.18,6,.9,13.45-5.1,16.63-6,3.18-13.45.89-16.63-5.11-3.18-6-.9-13.45,5.11-16.63Z"/></g></svg>
+  <span class="footer-right">ページ総数: 9</span>
+</div>
+</body>
+</html>

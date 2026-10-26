@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>斎場サイト サイトマップ</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap">
+<style>
+:root {
+  --primary: #4361ee;
+  --accent-blue: #06b6d4;
+  --accent-green: #10b981;
+  --accent-orange: #f59e0b;
+  --accent-red: #ef4444;
+  --accent-purple: #8b5cf6;
+  --dark: #0f172a;
+  --gray-700: #334155;
+  --gray-600: #475569;
+  --gray-500: #64748b;
+  --gray-400: #94a3b8;
+  --gray-300: #cbd5e1;
+  --gray-200: #e2e8f0;
+  --gray-100: #f1f5f9;
+  --gray-50: #f8fafc;
+  --white: #ffffff;
+  --new: #2563eb;
+  --mod: #c2410c;
+  --card-shadow: 0 2px 8px rgba(0,0,0,.06), 0 0 1px rgba(0,0,0,.1);
+  --card-shadow-hover: 0 8px 24px rgba(0,0,0,.1), 0 0 1px rgba(0,0,0,.12);
+  color-scheme: light;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+html, body { height: 100%; }
+body {
+  font-family: 'Noto Sans JP','Inter',sans-serif;
+  background: #edf0f7;
+  color: var(--dark);
+  -webkit-font-smoothing: antialiased;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+.doc-header { background: var(--dark); padding: 20px 32px; display: flex; align-items: center; gap: 24px; flex-shrink: 0; flex-wrap: wrap; }
+.header-left { display: flex; flex-direction: column; gap: 8px; }
+.doc-header h1 { font-size: 15px; font-weight: 700; color: #fff; letter-spacing: .08em; }
+.header-company { display: flex; align-items: center; gap: 8px; }
+.company-logo { flex-shrink: 0; opacity: .9; }
+.company-name { font-size: 11px; font-weight: 500; color: var(--gray-400); }
+.header-right { display: flex; align-items: center; gap: 16px; font-size: 11px; color: var(--gray-400); flex-wrap: wrap; }
+.header-badge { background: rgba(255,255,255,.08); padding: 4px 12px; border-radius: 20px; font-size: 11px; color: var(--gray-300); border: 1px solid rgba(255,255,255,.12); }
+.zoom-controls { display: flex; align-items: center; gap: 2px; background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.12); border-radius: 6px; padding: 2px; }
+.zoom-btn { width: 28px; height: 28px; border: none; background: transparent; color: var(--gray-300); font-size: 14px; font-weight: 600; cursor: pointer; border-radius: 4px; display: flex; align-items: center; justify-content: center; }
+.zoom-btn:hover, .zoom-btn:focus-visible { background: rgba(255,255,255,.15); color: #fff; }
+.zoom-btn svg { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.zoom-level { font-size: 11px; font-weight: 500; color: var(--gray-300); min-width: 40px; text-align: center; user-select: none; }
+.zoom-divider { width: 1px; height: 18px; background: rgba(255,255,255,.15); margin: 0 2px; }
+
+.legend-bar { background: var(--white); border-bottom: 1px solid var(--gray-200); padding: 10px 32px; display: flex; align-items: center; gap: 8px 24px; font-size: 11px; color: var(--gray-500); flex-shrink: 0; flex-wrap: wrap; }
+.legend-item { display: flex; align-items: center; gap: 6px; white-space: nowrap; }
+.legend-color { width: 10px; height: 10px; border-radius: 3px; }
+
+.canvas-scroll { overflow: auto; flex: 1 1 auto; min-height: 0; }
+.canvas-scale { transform-origin: 0 0; transition: transform .2s ease; }
+.canvas-wrapper { padding: 40px 40px 80px 72px; position: relative; width: 1340px; }
+.connectors { position: absolute; top: 0; left: 0; pointer-events: none; z-index: 0; overflow: visible; }
+
+.page-card { position: absolute; width: 160px; background: var(--white); border-radius: 8px; box-shadow: var(--card-shadow); overflow: hidden; cursor: pointer; transition: transform .25s, box-shadow .25s; z-index: 1; border: 1px solid var(--gray-200); }
+.page-card:hover, .page-card:focus-visible { box-shadow: var(--card-shadow-hover); transform: translateY(-3px) scale(1.02); z-index: 10; border-color: var(--primary); outline: none; }
+.card-color-bar { height: 4px; width: 100%; }
+.color-primary { background: var(--primary); }
+.color-blue { background: var(--accent-blue); }
+.color-green { background: var(--accent-green); }
+.color-orange { background: var(--accent-orange); }
+.color-red { background: var(--accent-red); }
+.color-purple { background: var(--accent-purple); }
+.color-gray { background: var(--gray-400); }
+.card-label { padding: 8px 10px 6px; display: flex; align-items: flex-start; gap: 6px; border-bottom: 1px solid var(--gray-100); }
+.card-label .badge { font-size: 8px; font-weight: 600; color: #fff; background: var(--primary); padding: 1px 6px; border-radius: 3px; flex-shrink: 0; margin-top: 2px; }
+.badge.b-blue { background: #0891b2; } .badge.b-green { background: #059669; } .badge.b-orange { background: #d97706; }
+.badge.b-red { background: #dc2626; } .badge.b-purple { background: #7c3aed; } .badge.b-gray { background: var(--gray-500); }
+.card-label .meta { min-width: 0; }
+.card-label .name { font-size: 10px; font-weight: 600; color: var(--dark); line-height: 1.4; }
+.card-label .url { font-size: 8px; color: var(--gray-500); font-family: 'Inter', monospace; display: block; margin-top: 1px; }
+.st { display: inline-block; margin-top: 3px; font-size: 8px; font-weight: 700; color: #fff; padding: 1px 6px; border-radius: 3px; }
+.st.new { background: var(--new); } .st.mod { background: var(--mod); }
+
+.mini-wire { padding: 8px; background: var(--gray-50); min-height: 110px; }
+.mw-header { display: flex; align-items: center; justify-content: space-between; padding: 3px 6px; background: var(--white); border: 1px solid var(--gray-200); border-radius: 3px; margin-bottom: 4px; }
+.mw-logo { width: 20px; height: 6px; background: var(--gray-300); border-radius: 1px; }
+.mw-nav { display: flex; gap: 3px; }
+.mw-nav-item { width: 12px; height: 3px; background: var(--gray-300); border-radius: 1px; }
+.mw-nav-item.hl { background: var(--new); }
+.mw-hero { height: 28px; background: var(--gray-200); border-radius: 3px; margin-bottom: 4px; display: flex; align-items: center; justify-content: center; }
+.mw-hero-text { font-size: 5px; color: var(--gray-500); font-weight: 500; }
+.mw-section-title { text-align: center; font-size: 5px; color: var(--gray-500); font-weight: 600; margin: 5px 0 3px; letter-spacing: .04em; }
+.mw-text-line { height: 3px; background: var(--gray-200); border-radius: 1px; margin-bottom: 2px; }
+.mw-text-line.short { width: 60%; }
+.mw-cards-row { display: flex; gap: 3px; margin-bottom: 3px; }
+.mw-card-mini { flex: 1; background: var(--white); border: 1px solid var(--gray-200); border-radius: 2px; padding: 3px; }
+.mw-card-mini.hl { border-color: var(--new); }
+.mw-card-img { height: 10px; background: var(--gray-200); border-radius: 1px; margin-bottom: 2px; }
+.mw-card-text { height: 2px; background: var(--gray-200); border-radius: 1px; margin-bottom: 1px; }
+.mw-price { height: 3px; width: 60%; background: var(--gray-700); border-radius: 1px; }
+.mw-list-item { display: flex; align-items: center; gap: 4px; padding: 2px 0; border-bottom: 1px solid var(--gray-100); }
+.mw-list-dot { width: 3px; height: 3px; background: var(--primary); border-radius: 50%; flex-shrink: 0; }
+.mw-list-line { height: 2px; background: var(--gray-200); border-radius: 1px; flex: 1; }
+.mw-form-field { height: 8px; background: var(--white); border: 1px solid var(--gray-200); border-radius: 2px; margin-bottom: 3px; }
+.mw-btn { height: 8px; background: var(--primary); border-radius: 2px; margin: 4px auto 0; width: 50%; }
+.mw-table-row { display: flex; gap: 2px; margin-bottom: 2px; }
+.mw-table-cell { flex: 1; height: 6px; background: var(--gray-200); border-radius: 1px; }
+.mw-table-cell.header { background: var(--gray-300); flex: .6; }
+.mw-chips { display: flex; gap: 2px; margin: 2px 0 3px; }
+.mw-chip { width: 14px; height: 6px; border: 1px solid var(--gray-300); border-radius: 1px; background: var(--white); }
+.mw-tel { height: 9px; border: 1px solid var(--gray-700); border-radius: 2px; margin: 3px 0; }
+.mw-hl-box { border: 1px solid var(--new); border-radius: 2px; padding: 2px; margin-top: 3px; }
+.mw-hl-box.mod { border-color: var(--mod); }
+.mw-hl-label { font-size: 5px; font-weight: 700; color: var(--new); margin-bottom: 2px; }
+.mw-hl-box.mod .mw-hl-label { color: var(--mod); }
+.mw-footer { margin-top: 4px; padding: 3px 6px; background: var(--gray-700); border-radius: 2px; }
+.mw-footer-line { height: 2px; background: var(--gray-500); border-radius: 1px; margin-bottom: 2px; }
+.mw-footer-line.short { width: 40%; }
+
+.page-card .tooltip { display: none; position: absolute; bottom: calc(100% + 8px); left: 50%; transform: translateX(-50%); background: var(--dark); color: #fff; padding: 8px 14px; border-radius: 6px; font-size: 11px; white-space: nowrap; z-index: 100; }
+
+footer { background: #fff; border-top: 2px solid #e2e8f0; padding: 16px 40px; display: flex; align-items: center; gap: 24px; font-size: 11px; color: #64748b; flex-shrink: 0; flex-wrap: wrap; }
+footer svg { opacity: .5; }
+.footer-right { margin-left: auto; }
+@media (prefers-reduced-motion: reduce) { .page-card, .canvas-scale { transition: none; } }
+</style>
+
+<div class="doc-header">
+  <div class="header-left">
+    <h1>SITE MAP</h1>
+    <div class="header-company">
+      <svg class="company-logo" viewBox="0 0 94 56.17" width="56" height="33" aria-hidden="true"><defs><style>.lw3{fill:#fff}.lw4{fill:#00afec}</style></defs><g><path class="lw3" d="M32.57,15.88s0,0,0,.01c3.18,6,.9,13.45-5.11,16.63-4.35,2.31-9.46,1.73-13.15-1.05l2.13-2.62L35.73,5.16C27.21-2.09,14.41-1.7,6.36,6.35c-8.47,8.47-8.48,22.2-.01,30.68,8.47,8.48,22.2,8.48,30.68.02,2.73-2.73,5.3-7.6,6.12-11.35,0,0,1.26-6.98,4.02-13.01,2.76-6.03,7.98-10.35,7.98-10.35,0,0-16.7,1.49-22.58,13.55Z"/><path class="lw4" d="M15.94,10.79c-6,3.18-8.28,10.63-5.1,16.63.87,1.65,2.08,3.01,3.48,4.06l15.51-19.05c-3.73-3.28-9.23-4.1-13.88-1.64Z"/><path class="lw3" d="M55.44,35.32c.47.59.98,1.16,1.53,1.7,8.47,8.47,22.2,8.48,30.68.01,8.48-8.47,8.48-22.2.01-30.68-8.47-8.48-22.2-8.48-30.68-.01-2.73,2.73-5.3,7.59-6.12,11.35,0,0-1.26,6.98-4.02,13.01-2.76,6.03-7.98,10.35-7.98,10.35,0,0,9.04-.44,16.58-5.74Z"/><path class="lw4" d="M66.53,10.86c6-3.18,13.44-.9,16.63,5.11,3.18,6,.9,13.45-5.1,16.63-6,3.18-13.45.89-16.63-5.11-3.18-6-.9-13.45,5.11-16.63Z"/></g></svg>
+      <span class="company-name">斎場 公式サイト（宮本工業所様）</span>
+    </div>
+  </div>
+  <div class="header-right">
+    <span class="header-badge">全10ページ</span>
+    <span>作成日: 2026.10.26</span>
+    <span>Ver 1.1</span>
+    <div class="zoom-controls">
+      <button class="zoom-btn" id="zoomOut" title="縮小" aria-label="縮小"><svg viewBox="0 0 24 24" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/></svg></button>
+      <span class="zoom-level" id="zoomLevel">100%</span>
+      <button class="zoom-btn" id="zoomIn" title="拡大" aria-label="拡大"><svg viewBox="0 0 24 24" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button>
+      <div class="zoom-divider"></div>
+      <button class="zoom-btn" id="zoomReset" title="100%に戻す" aria-label="100%に戻す">1:1</button>
+      <div class="zoom-divider"></div>
+      <button class="zoom-btn" id="zoomFit" title="全体表示" aria-label="全体表示"><svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg></button>
+    </div>
+  </div>
+</div>
+
+<div class="legend-bar">
+  <span style="font-weight:600;color:var(--gray-700);">凡例:</span>
+  <div class="legend-item"><div class="legend-color color-primary"></div>トップ</div>
+  <div class="legend-item"><div class="legend-color color-green"></div>ご利用案内</div>
+  <div class="legend-item"><div class="legend-color color-blue"></div>施設・アクセス</div>
+  <div class="legend-item"><div class="legend-color color-orange"></div>お知らせ</div>
+  <div class="legend-item"><div class="legend-color color-red"></div>業者様向け</div>
+  <div class="legend-item"><div class="legend-color color-purple"></div>お問い合わせ</div>
+  <div class="legend-item"><div class="legend-color color-gray"></div>共通ページ</div>
+  <div class="legend-item"><span class="st new" style="margin:0">新規</span>新しく作るページ</div>
+  <div class="legend-item"><span class="st mod" style="margin:0">改修</span>既存ページに追加・変更</div>
+</div>
+
+<div class="canvas-scroll" id="canvasScroll">
+<div class="canvas-scale" id="canvasScale">
+<div class="canvas-wrapper" id="canvas">
+  <svg class="connectors" id="svg-connectors" aria-hidden="true"></svg>
+
+  <div class="page-card" id="top" tabindex="0" style="left:522px; top:20px; width:180px;">
+    <div class="card-color-bar color-primary"></div>
+    <div class="card-label"><span class="badge">TOP</span><div class="meta"><div class="name">トップページ</div><div class="url">/</div><span class="st mod">改修</span></div></div>
+    <div class="mini-wire">
+      <div class="mw-header"><div class="mw-logo"></div><div class="mw-nav"><div class="mw-nav-item"></div><div class="mw-nav-item"></div><div class="mw-nav-item hl"></div><div class="mw-nav-item"></div></div></div>
+      <div class="mw-hero"><span class="mw-hero-text">MAIN VISUAL</span></div>
+      <div class="mw-section-title">NEWS</div>
+      <div class="mw-list-item"><div class="mw-list-dot"></div><div class="mw-list-line"></div></div>
+      <div class="mw-list-item"><div class="mw-list-dot"></div><div class="mw-list-line"></div></div>
+      <div class="mw-hl-box mod"><div class="mw-hl-label">ご利用案内 4カード</div><div class="mw-cards-row"><div class="mw-card-mini"><div class="mw-card-text"></div></div><div class="mw-card-mini hl"><div class="mw-card-text"></div></div><div class="mw-card-mini"><div class="mw-card-text"></div></div><div class="mw-card-mini"><div class="mw-card-text"></div></div></div></div>
+      <div class="mw-section-title">CONTACT</div>
+      <div class="mw-form-field"></div>
+    </div>
+  </div>
+
+  <div class="page-card" id="information" tabindex="0" style="left:32px; top:330px;">
+    <div class="card-color-bar color-orange"></div>
+    <div class="card-label"><span class="badge b-orange">2F</span><div class="meta"><div class="name">お知らせ</div><div class="url">/information/</div></div></div>
+    <div class="mini-wire">
+      <div class="mw-header"><div class="mw-logo"></div><div class="mw-nav"><div class="mw-nav-item"></div><div class="mw-nav-item"></div><div class="mw-nav-item"></div></div></div>
+      <div class="mw-section-title">INFORMATION</div>
+      <div class="mw-list-item"><div class="mw-list-dot"></div><div class="mw-list-line"></div></div>
+      <div class="mw-list-item"><div class="mw-list-dot"></div><div class="mw-list-line"></div></div>
+      <div class="mw-list-item"><div class="mw-list-dot"></div><div class="mw-list-line"></div></div>
+    </div>
+  </div>
+
+  <div class="page-card" id="information-detail" tabindex="0" style="left:42px; top:600px; width:140px;">
+    <div class="card-color-bar color-orange"></div>
+    <div class="card-label"><span class="badge b-orange">3F</span><div class="meta"><div class="name">お知らせ詳細</div><div class="url">/information/:id/</div></div></div>
+    <div class="mini-wire" style="min-height:80px">
+      <div class="mw-header"><div class="mw-logo"></div><div class="mw-nav"><div class="mw-nav-item"></div><div class="mw-nav-item"></div></div></div>
+      <div class="mw-section-title">ARTICLE</div>
+      <div class="mw-text-line"></div><div class="mw-text-line"></div><div class="mw-text-line short"></div>
+    </div>
+  </div>
+
+  <div class="page-card" id="guide" tabindex="0" style="left:232px; top:330px;">
+    <div class="card-color-bar color-green"></div>
+    <div class="card-label"><span class="badge b-green">2F</span><div class="meta"><div class="name">火葬のご利用案内</div><div class="url">/guide/</div><span class="st mod">改修</span></div></div>
+    <div class="mini-wire">
+      <div class="mw-header"><div class="mw-logo"></div><div class="mw-nav"><div class="mw-nav-item"></div><div class="mw-nav-item"></div><div class="mw-nav-item"></div></div></div>
+      <div class="mw-section-title">概要・料金</div>
+      <div class="mw-table-row"><div class="mw-table-cell header"></div><div class="mw-table-cell"></div></div>
+      <div class="mw-table-row"><div class="mw-table-cell header"></div><div class="mw-table-cell"></div></div>
+      <div class="mw-section-title">火葬時刻</div>
+      <div class="mw-chips"><div class="mw-chip"></div><div class="mw-chip"></div><div class="mw-chip"></div><div class="mw-chip"></div><div class="mw-chip"></div></div>
+      <div class="mw-section-title">予約方法・副葬品</div>
+      <div class="mw-text-line"></div>
+      <div class="mw-hl-box"><div class="mw-hl-label">売店のご案内 → 施設・アクセス</div><div class="mw-btn" style="margin-top:0;width:40%"></div></div>
+    </div>
+  </div>
+
+  <div class="page-card" id="pet" tabindex="0" style="left:432px; top:330px;">
+    <div class="card-color-bar color-green"></div>
+    <div class="card-label"><span class="badge b-green">2F</span><div class="meta"><div class="name">ペット火葬のご利用案内</div><div class="url">/pet/</div><span class="st new">新規</span></div></div>
+    <div class="mini-wire">
+      <div class="mw-header"><div class="mw-logo"></div><div class="mw-nav"><div class="mw-nav-item"></div><div class="mw-nav-item"></div><div class="mw-nav-item"></div></div></div>
+      <div class="mw-section-title">概要・料金</div>
+      <div class="mw-table-row"><div class="mw-table-cell header"></div><div class="mw-table-cell"></div></div>
+      <div class="mw-table-row"><div class="mw-table-cell header"></div><div class="mw-table-cell"></div></div>
+      <div class="mw-section-title">火葬時刻・予約</div>
+      <div class="mw-chips"><div class="mw-chip"></div><div class="mw-chip"></div><div class="mw-chip"></div><div class="mw-chip"></div></div>
+      <div class="mw-tel"></div>
+      <div class="mw-hl-box"><div class="mw-hl-label">売店（動物用骨壺・棺）</div>
+        <div class="mw-table-row"><div class="mw-table-cell header"></div><div class="mw-table-cell"></div></div>
+        <div class="mw-cards-row"><div class="mw-card-mini"><div class="mw-card-img"></div><div class="mw-price"></div></div><div class="mw-card-mini"><div class="mw-card-img"></div><div class="mw-price"></div></div><div class="mw-card-mini"><div class="mw-card-img"></div><div class="mw-price"></div></div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-card" id="facility" tabindex="0" style="left:632px; top:330px;">
+    <div class="card-color-bar color-blue"></div>
+    <div class="card-label"><span class="badge b-blue">2F</span><div class="meta"><div class="name">施設・アクセス</div><div class="url">/facility/</div><span class="st mod">改修</span></div></div>
+    <div class="mini-wire">
+      <div class="mw-header"><div class="mw-logo"></div><div class="mw-nav"><div class="mw-nav-item"></div><div class="mw-nav-item"></div><div class="mw-nav-item"></div></div></div>
+      <div class="mw-section-title">館内案内図・主な施設</div>
+      <div class="mw-hero" style="height:16px"></div>
+      <div class="mw-hl-box"><div class="mw-hl-label">売店 #shop</div>
+        <div class="mw-table-row"><div class="mw-table-cell header"></div><div class="mw-table-cell"></div></div>
+        <div class="mw-cards-row"><div class="mw-card-mini"><div class="mw-card-img"></div><div class="mw-price"></div></div><div class="mw-card-mini"><div class="mw-card-img"></div><div class="mw-price"></div></div><div class="mw-card-mini"><div class="mw-card-img"></div><div class="mw-price"></div></div></div>
+      </div>
+      <div class="mw-section-title">駐車場・アクセス</div>
+      <div class="mw-hero" style="height:14px"><span class="mw-hero-text">MAP</span></div>
+    </div>
+  </div>
+
+  <div class="page-card" id="partner" tabindex="0" style="left:832px; top:330px;">
+    <div class="card-color-bar color-red"></div>
+    <div class="card-label"><span class="badge b-red">2F</span><div class="meta"><div class="name">業者様専用ページ</div><div class="url">/partner/</div></div></div>
+    <div class="mini-wire">
+      <div class="mw-header"><div class="mw-logo"></div><div class="mw-nav"><div class="mw-nav-item"></div><div class="mw-nav-item"></div><div class="mw-nav-item"></div></div></div>
+      <div class="mw-section-title">DOWNLOAD</div>
+      <div class="mw-text-line"></div><div class="mw-text-line short"></div>
+      <div class="mw-list-item"><div class="mw-list-dot"></div><div class="mw-list-line"></div></div>
+      <div class="mw-list-item"><div class="mw-list-dot"></div><div class="mw-list-line"></div></div>
+    </div>
+  </div>
+
+  <div class="page-card" id="contact" tabindex="0" style="left:1032px; top:330px;">
+    <div class="card-color-bar color-purple"></div>
+    <div class="card-label"><span class="badge b-purple">2F</span><div class="meta"><div class="name">お問い合わせ</div><div class="url">/#contact</div></div></div>
+    <div class="mini-wire">
+      <div class="mw-header"><div class="mw-logo"></div><div class="mw-nav"><div class="mw-nav-item"></div><div class="mw-nav-item"></div></div></div>
+      <div class="mw-section-title">FORM（トップ内）</div>
+      <div class="mw-form-field"></div><div class="mw-form-field"></div><div class="mw-form-field"></div>
+      <div class="mw-btn" style="background:var(--accent-purple);width:40%"></div>
+    </div>
+  </div>
+
+  <div class="page-card" id="privacy" tabindex="0" style="left:842px; top:600px; width:140px;">
+    <div class="card-color-bar color-gray"></div>
+    <div class="card-label"><span class="badge b-gray">共通</span><div class="meta"><div class="name">プライバシーポリシー</div><div class="url">/policy/</div></div></div>
+    <div class="mini-wire" style="min-height:70px">
+      <div class="mw-header"><div class="mw-logo"></div><div class="mw-nav"><div class="mw-nav-item"></div></div></div>
+      <div class="mw-section-title">POLICY</div>
+      <div class="mw-text-line"></div><div class="mw-text-line short"></div>
+    </div>
+  </div>
+
+  <div class="page-card" id="notfound" tabindex="0" style="left:1042px; top:600px; width:140px;">
+    <div class="card-color-bar color-gray"></div>
+    <div class="card-label"><span class="badge b-gray">共通</span><div class="meta"><div class="name">404 ページ</div><div class="url">/404</div></div></div>
+    <div class="mini-wire" style="min-height:70px">
+      <div class="mw-header"><div class="mw-logo"></div><div class="mw-nav"><div class="mw-nav-item"></div></div></div>
+      <div class="mw-section-title">NOT FOUND</div>
+      <div class="mw-text-line short" style="margin:0 auto 2px"></div>
+      <div class="mw-btn" style="width:40%"></div>
+    </div>
+  </div>
+
+</div>
+</div>
+</div>
+
+<footer>
+  <span>Confidential - e-NAQUEST株式会社</span>
+  <svg viewBox="0 0 94 56.17" width="40" height="24" aria-hidden="true"><defs><style>.fl3{fill:#231815}.fl4{fill:#00afec}</style></defs><g><path class="fl3" d="M32.57,15.88s0,0,0,.01c3.18,6,.9,13.45-5.11,16.63-4.35,2.31-9.46,1.73-13.15-1.05l2.13-2.62L35.73,5.16C27.21-2.09,14.41-1.7,6.36,6.35c-8.47,8.47-8.48,22.2-.01,30.68,8.47,8.48,22.2,8.48,30.68.02,2.73-2.73,5.3-7.6,6.12-11.35,0,0,1.26-6.98,4.02-13.01,2.76-6.03,7.98-10.35,7.98-10.35,0,0-16.7,1.49-22.58,13.55Z"/><path class="fl4" d="M15.94,10.79c-6,3.18-8.28,10.63-5.1,16.63.87,1.65,2.08,3.01,3.48,4.06l15.51-19.05c-3.73-3.28-9.23-4.1-13.88-1.64Z"/><path class="fl3" d="M55.44,35.32c.47.59.98,1.16,1.53,1.7,8.47,8.47,22.2,8.48,30.68.01,8.48-8.47,8.48-22.2.01-30.68-8.47-8.48-22.2-8.48-30.68-.01-2.73,2.73-5.3,7.59-6.12,11.35,0,0-1.26,6.98-4.02,13.01-2.76,6.03-7.98,10.35-7.98,10.35,0,0,9.04-.44,16.58-5.74Z"/><path class="fl4" d="M66.53,10.86c6-3.18,13.44-.9,16.63,5.11,3.18,6,.9,13.45-5.1,16.63-6,3.18-13.45.89-16.63-5.11-3.18-6-.9-13.45,5.11-16.63Z"/></g></svg>
+  <span class="footer-right">Site Map v1.1 ／ カードをクリックするとワイヤーフレームを表示</span>
+</footer>
+
+<script>
+const ZOOM_STEPS = [25, 33, 50, 67, 75, 80, 90, 100, 110, 125, 150, 175, 200];
+let currentZoom = 100;
+function setZoom(p) {
+  currentZoom = Math.max(25, Math.min(200, p));
+  document.getElementById('canvasScale').style.transform = 'scale(' + (currentZoom / 100) + ')';
+  document.getElementById('zoomLevel').textContent = currentZoom + '%';
+}
+function findClosestZoom(t) { return ZOOM_STEPS.reduce((a, b) => Math.abs(b - t) < Math.abs(a - t) ? b : a); }
+function fitAll() {
+  const s = document.getElementById('canvasScroll');
+  const c = document.getElementById('canvas');
+  const z = Math.min(s.clientWidth / c.scrollWidth, s.clientHeight / c.scrollHeight) * 100 * 0.95;
+  setZoom(ZOOM_STEPS.filter(x => x <= z).pop() || 25);
+}
+document.getElementById('zoomOut').addEventListener('click', () => setZoom(ZOOM_STEPS.filter(z => z < currentZoom).pop() || 25));
+document.getElementById('zoomIn').addEventListener('click', () => setZoom(ZOOM_STEPS.find(z => z > currentZoom) || 200));
+document.getElementById('zoomReset').addEventListener('click', () => setZoom(100));
+document.getElementById('zoomFit').addEventListener('click', fitAll);
+document.getElementById('canvasScroll').addEventListener('wheel', (e) => {
+  if (e.ctrlKey || e.metaKey) {
+    e.preventDefault();
+    const next = ZOOM_STEPS.find(z => z > currentZoom) || currentZoom;
+    const prev = ZOOM_STEPS.filter(z => z < currentZoom).pop() || currentZoom;
+    setZoom(e.deltaY > 0 ? prev : next);
+  }
+}, { passive: false });
+
+const tree = {
+  'top': ['information', 'guide', 'pet', 'facility', 'partner', 'contact'],
+  'information': ['information-detail'],
+};
+const NS = 'http://www.w3.org/2000/svg';
+const LINE_COLOR = '#94a3b8', LINE_WIDTH = 1.5, DASH = '6,4', DOT_R = 3.5;
+function box(el) {
+  return { cx: el.offsetLeft + el.offsetWidth / 2, top: el.offsetTop, bottom: el.offsetTop + el.offsetHeight };
+}
+function mk(tag, attrs) {
+  const e = document.createElementNS(NS, tag);
+  for (const k in attrs) e.setAttribute(k, attrs[k]);
+  return e;
+}
+function line(svg, x1, y1, x2, y2) {
+  svg.appendChild(mk('line', { x1, y1, x2, y2, stroke: LINE_COLOR, 'stroke-width': LINE_WIDTH, 'stroke-dasharray': DASH }));
+}
+function dot(svg, cx, cy) { svg.appendChild(mk('circle', { cx, cy, r: DOT_R, fill: LINE_COLOR })); }
+function drawConnectors() {
+  const svg = document.getElementById('svg-connectors');
+  const c = document.getElementById('canvas');
+  const w = c.scrollWidth, h = c.scrollHeight;
+  svg.style.width = w + 'px'; svg.style.height = h + 'px';
+  svg.setAttribute('viewBox', '0 0 ' + w + ' ' + h);
+  while (svg.firstChild) svg.removeChild(svg.firstChild);
+  Object.entries(tree).forEach(([pid, kids]) => {
+    const pe = document.getElementById(pid);
+    if (!pe) return;
+    const p = box(pe);
+    const ch = kids.map(id => document.getElementById(id)).filter(Boolean).map(box).sort((a, b) => a.cx - b.cx);
+    if (!ch.length) return;
+    const midY = (p.bottom + ch[0].top) / 2;
+    line(svg, p.cx, p.bottom, p.cx, midY);
+    dot(svg, p.cx, p.bottom);
+    const left = Math.min(p.cx, ch[0].cx), right = Math.max(p.cx, ch[ch.length - 1].cx);
+    if (right - left > 1) line(svg, left, midY, right, midY);
+    ch.forEach(k => { line(svg, k.cx, midY, k.cx, k.top); dot(svg, k.cx, k.top); });
+  });
+}
+function fixCanvasHeight() {
+  const c = document.getElementById('canvas');
+  let max = 0;
+  c.querySelectorAll('.page-card').forEach(k => { max = Math.max(max, k.offsetTop + k.offsetHeight); });
+  c.style.minHeight = (max + 80) + 'px';
+}
+const cardLinkMap = {
+  'top': 'wireframe_top.html',
+  'contact': 'wireframe_top.html',
+  'information': 'wf-information.html',
+  'information-detail': 'wf-information-detail.html',
+  'guide': 'wf-guide.html',
+  'pet': 'wf-pet.html',
+  'facility': 'wf-facility.html',
+  'partner': 'wf-partner.html',
+  'privacy': 'wf-privacy.html',
+  'notfound': 'wf-notfound.html',
+};
+document.querySelectorAll('.page-card').forEach(card => {
+  const href = cardLinkMap[card.id];
+  if (!href) return;
+  card.title = 'クリックでワイヤーフレームを表示';
+  card.setAttribute('role', 'link');
+  const go = () => { window.location.href = href; };
+  card.addEventListener('click', go);
+  card.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); go(); } });
+});
+function init() { fixCanvasHeight(); drawConnectors(); }
+window.addEventListener('load', () => requestAnimationFrame(() => requestAnimationFrame(init)));
+window.addEventListener('resize', init);
+if (document.readyState === 'complete') requestAnimationFrame(init);
+</script>
+
+</html>
